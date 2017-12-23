@@ -1,9 +1,9 @@
-var express = require('express');
-var dailyApp = express.Router();
+import express from 'express';
+const dailyApp = express.Router();
 
 dailyApp.route('/')
-  .get(function (req, res) {
+  .get((req, res) => {
     res.send('Hello World!');
   });
 
-module.exports = dailyApp;
+export default dailyApp;
