@@ -1,4 +1,5 @@
 import express from 'express';
+
 const dailyApp = express.Router();
 
 dailyApp.route('/')
