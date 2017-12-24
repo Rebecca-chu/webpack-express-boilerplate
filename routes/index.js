@@ -1,10 +1,8 @@
 import express from 'express';
+import path from 'path';
 
 const dailyApp = express.Router();
 
-dailyApp.route('/')
-  .get((req, res) => {
-    res.send('Hello World!');
-  });
+dailyApp.use(express.static(path.join(__dirname, '/../public')));
 
 export default dailyApp;
