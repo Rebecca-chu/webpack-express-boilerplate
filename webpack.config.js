@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -5,5 +6,24 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
-  }
+  },
+  module: {
+    rules: [{
+      test: /\.js$|\.jsx$/,
+      exclude: /node_modules/,
+      enforce: 'pre',
+      loader: 'eslint-loader'
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'react']
+      }
+    }],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public/index.html') })
+  ]
 };
