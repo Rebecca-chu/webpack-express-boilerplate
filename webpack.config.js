@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   entry: './src/javascripts/startup/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
   },
   module: {
@@ -27,6 +27,6 @@ module.exports = {
     new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public/index.html') })
   ],
   devServer: {
-    contentBase: './dist'
+    contentBase: './public'
   }
 };
