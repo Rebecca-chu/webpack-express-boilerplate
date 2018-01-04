@@ -36,7 +36,7 @@ module.exports = {
     }],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public/index.html') }),
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') }),
     new ExtractTextPlugin({ filename: "[name].css" })
   ],
   devServer: {
