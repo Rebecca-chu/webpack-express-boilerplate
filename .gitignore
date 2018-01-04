@@ -9,4 +9,4 @@ yarn-error.log*
 node_modules/
 
 # bundle file
-public/bundle.js
+dist/
