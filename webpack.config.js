@@ -1,8 +1,10 @@
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
+const debug = process.env.NODE_ENV !== 'production';
 
-module.exports = {
+const config = {
   entry: {
     app: './src/javascripts/index.js'
   },
@@ -43,3 +45,9 @@ module.exports = {
     contentBase: './dist'
   }
 };
+
+if (!debug) {
+  config.plugins.push(new UglifyJSPlugin());
+}
+
+module.exports = config;
